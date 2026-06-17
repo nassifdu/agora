@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #C9A84C;
+  --color-gold-light: #E8D48B;
+  --color-gold-dark: #8A6914;
+  --color-gold-muted: rgba(201, 168, 76, 0.18);
+  --color-parchment: #FAF7F2;
+  --color-marble: #F5F0E8;
+  --color-marble-dark: #EDE6D8;
+  --color-obsidian: #1A1714;
+  --color-stone: #6B6560;
+  --color-stone-light: #9E9590;
+
+  --font-serif: var(--font-playfair);
+  --font-body: var(--font-garamond);
+
+  --radius-card: 4px;
+}
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FAF7F2;
+  color: #1A1714;
+  font-family: var(--font-garamond), 'EB Garamond', Georgia, serif;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse at 15% 25%, rgba(201, 168, 76, 0.06) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 70%, rgba(201, 168, 76, 0.04) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 0%, rgba(245, 240, 232, 0.8) 0%, transparent 60%);
+}
+
+/* Decorative marble card background */
+.card-marble {
+  background: linear-gradient(145deg, #FDFBF8 0%, #F5F0E8 40%, #FDFBF8 70%, #F0EBE0 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-marble::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(102deg, transparent 30%, rgba(201, 168, 76, 0.04) 50%, transparent 70%),
+    linear-gradient(15deg, transparent 40%, rgba(255, 255, 255, 0.5) 55%, transparent 65%);
+  pointer-events: none;
+}
+
+/* Gold divider line */
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A84C, transparent);
+  border: none;
+  margin: 0;
+}
+
+/* Subtle text gradient for headings */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #8A6914, #C9A84C, #E8D48B, #C9A84C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Greek key border accent using CSS */
+.greek-accent {
+  border-top: 1px solid rgba(201, 168, 76, 0.4);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.4);
+  padding: 2px 0;
+}
+
+/* Masonry columns */
+.masonry {
+  column-count: 1;
+  column-gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 1280px) {
+  .masonry {
+    column-count: 4;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F0E8;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 168, 76, 0.4);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 168, 76, 0.7);
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid #C9A84C;
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(201, 168, 76, 0.25);
+  color: #1A1714;
+}
+
+/* Link base style */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Input base */
+input, textarea {
+  font-family: var(--font-garamond), 'EB Garamond', Georgia, serif;
+}
