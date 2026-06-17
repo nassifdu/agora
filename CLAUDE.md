@@ -15,7 +15,7 @@ A Greek-themed gallery of thoughts and ideas, built with Next.js 16 (App Router)
 ## Development
 
 ```bash
-cp .env.example .env.local   # fill in your Supabase keys
+cp .env.example .env.local   # fill in SUPABASE_URL and PUBLISHABLE_KEY
 npm install
 npm run dev                  # http://localhost:3000
 npm run build                # production build
@@ -26,10 +26,10 @@ npm run lint
 
 ```
 NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_your-key-here
 ```
 
-Add these to Vercel project settings for deployment.
+Note: Supabase now calls this the "publishable key" (format `sb_publishable_…`), replacing the old "anon key" (JWT format). Add both vars to Vercel project settings for deployment.
 
 ## Supabase Setup
 
