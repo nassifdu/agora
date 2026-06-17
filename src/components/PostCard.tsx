@@ -18,24 +18,11 @@ export default function PostCard({ post, featured = false }: PostCardProps) {
 
   return (
     <article
-      className="card-marble group"
+      className="card-marble post-card"
       style={{
         border: '1px solid rgba(201,168,76,0.2)',
         borderRadius: '4px',
         overflow: 'hidden',
-        transition: 'box-shadow 0.25s, border-color 0.25s, transform 0.2s',
-      }}
-      onMouseEnter={e => {
-        const el = e.currentTarget
-        el.style.boxShadow = '0 4px 24px rgba(201,168,76,0.15), 0 1px 4px rgba(26,23,20,0.08)'
-        el.style.borderColor = 'rgba(201,168,76,0.45)'
-        el.style.transform = 'translateY(-2px)'
-      }}
-      onMouseLeave={e => {
-        const el = e.currentTarget
-        el.style.boxShadow = ''
-        el.style.borderColor = 'rgba(201,168,76,0.2)'
-        el.style.transform = ''
       }}
     >
       {/* Image */}
